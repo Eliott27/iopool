@@ -1,0 +1,22 @@
+body {
+    background-color: #088c7c;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    
+    }
+
+a {
+    text-decoration: none;
+}
+    
+    
+.bouton {
+    background-color: #05b3b3;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif; 
+}
+
+.app {
+    margin-top: 225px;
+}  
