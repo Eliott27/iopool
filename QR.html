@@ -10,10 +10,28 @@
         <title>QR</title>
     </head>
     <body>
-        <div class="app">
-        <input type="file" name="image" accept="image/*" capture>   
-        <br>
-        <button type="button" class="bouton"><a href="home.html">Retour Home</a></button>
-        </div>  
+        <button type="button" class="bouton2"><a href="home.html">Retour Home</a></button>
+        <script>
+        QRScanner.prepare(nomFonction); 
+
+        function nomFonction(err,status){
+            if (status.authorized) {
+                // Super, l’accès est autorisé, il n’y a plus rien à vérifier } else if (status.denied) {
+                // L’accès a été refusé par l’utilisateur.
+                // On peut peut le renvoyer vers les paramètres grâce à // QRScanner.openSettings();
+                } else {
+                // Accès refusé de manière temporaire, au prochain chargement // de la page, la demande sera ré-itérée
+                } 
+        }
+        QRScanner.scan(fonctionPostScan);
+        // Permet d’analyser l’image jusqu’à ce qu’un QR Code soit visible // Une fois scanné, la fonction « fonctionPostScan » est appelée.
+        function fonctionPostScan(err, text){ if(err){
+        // une erreur s’est produite } else {
+} }
+        QRscanner.show();
+        // Va ouvrir la caméra
+        QRScanner.hide();
+        // Va cacher la caméra
+                </script>
     </body>
 </html>

@@ -2,12 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'nonce-Random'; connect-src 'self'; img-src *; style-src *; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" href="css/index.css">
         <title>Inscription</title>
+        <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+        <script>
+            $( document ).ready(function() {
+            
+                $( "#connect" ).click(function(){ 
+                    console.log( "handler for .click() called." );
+                    $.post( "http://md.lpow.ephec.be", 
+                            { method: "signin", app: "Iopool", email: $( ".email" ).val() , password: $(".password").val() }, 
+                            function( data ) {
+                                alert( "Data Loaded: " + data );
+                                if (data.result == "OK"){
+                                    alert ("L'id de la session est "+data.id);
+                                } else {
+                                    alert("Bad Login : "+data.error);
+                                }
+                            }
+                    );        
+                })
+            });
+        </script>
     </head>
     <body>
         <div class="app">
@@ -15,20 +36,20 @@
                     src="./img/logo-iopool.png"
                     height="100px"
                     width="auto">
-            <form>
-                Sexe : Homme: <input type="radio" name="sexe" /><br/>
-                Femme: <input type="radio" name="sexe" /><br/>
-			    Nom : <input type="text" name="lastname">
+            <form class="form" method="post">
+                Sexe : Homme: <input class="form2" type="radio" name="sexe" /><br/>
+                Femme: <input class="form2" type="radio" name="sexe" /><br/>
+			    Nom : <input class="form2" type="text" name="lastname">
 			    <br/>
-			    Prénom : <input type="text" name="firstname">
+			    Prénom : <input class="form2" type="text" name="firstname">
 			    <br/>
-                Pseudo : <input type="text" name="Pseudo">
+                Pseudo : <input class="form2" type="text" name="Pseudo">
                 <br/>
-			    Adresse E-mail : <input type="text" name="E-mail">
+			    Adresse E-mail : <input class="email" type="text" name="E-mail">
 			    <br/>
-                Mot de passe : <input type="password" name="Mot de passe">
+                Mot de passe : <input class="password" type="password" name="Mot de passe">
  			    <br/>
-                <button type="button" class="bouton"><a href="home.html">S'inscrire</a></button>
+                <button type="button" id="connect" class="bouton3"><a href="home.html">S'inscrire</a></button>
 		    </form>
         </div>    
     </body>

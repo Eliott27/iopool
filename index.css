@@ -9,14 +9,72 @@ a {
     text-decoration: none;
 }
     
-    
 .bouton {
+    background: #05b3b3;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+  }
+ 
+.app {
+    margin-top: 225px;
+}
+
+.bouton2 {
     background-color: #05b3b3;
     text-decoration: none;
     border-radius: 5px;
     font-family: "Montserrat", sans-serif; 
+    float: left;
+    margin-top: 0px;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
 }
 
-.app {
-    margin-top: 225px;
-}  
+.fidélité {
+  margin-top: 225px;
+}
+
+.form {
+    background: #05b3b3;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif; 
+    display: block;
+    text-align: center;
+}
+
+.password {
+    background-color: #078c7c;
+}
+
+.email {
+    background-color: #078c7c;
+}
+
+.form2 {
+    background-color: #078c7c;
+}
+
+.bouton3 {
+    background: #078c7c;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+}
+.email
+.password
+.form
+.form2{
+    display: block;
+    width: 150px;
+    float: left;
+}
